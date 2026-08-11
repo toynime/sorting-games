@@ -7,7 +7,7 @@
 <style>
 body{
     background-color: #20232a;
-    padding-top: 50px;
+    padding-top: 10px;
 }
 .tier {
     display: flex;
@@ -90,10 +90,29 @@ body{
 .tier:nth-child(5) .label {
     background-color: #ffbbbb;
 }
+#downloadTierList{
+    width: 200px;
+    height: 70px;
+    margin-bottom: 50px;
+    padding: 20px;
+    background-color: black;
+    color: white;
+    text-align: center;
+    border-radius: 20px;
+    line-height: 18px;
+    font-size: large;
+    margin-left: 550px;
+    cursor: pointer;
+}
 </style>
 </head>
 <body>
 
+<button id="downloadTierList">
+    Download as image
+</button>
+
+<div id="tierlist">
 <div class="tier">
     <div class="label">Very Hard</div>
     <div class="games">
@@ -225,6 +244,10 @@ body{
         <div data-store="https://play.google.com/store/search?q=Unpuzzle%20Tap%20Away&c=apps"><img src="images/Unpuzzle Tap Away.png"><span>Unpuzzle Tap Away</span></div>
     </div>
 </div>
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
 <script>
 document.querySelectorAll(".games > div").forEach(function(game) {
     game.addEventListener("click", function() {
@@ -274,6 +297,47 @@ document.querySelectorAll(".games").forEach(games => {
         }
     });
 
+});
+
+
+document.getElementById("downloadTierList").addEventListener("click", async () => {
+
+    const tierList = document.getElementById("tierlist");
+
+    if (!tierList) {
+        alert("Tier list not found!");
+        return;
+    }
+
+    try {
+        const canvas = await html2canvas(tierList, {
+            backgroundColor: "#ffffff",
+            scale: 2,
+            useCORS: true,
+            allowTaint: false
+        });
+
+        canvas.toBlob(function(blob) {
+            if (!blob) {
+                alert("Could not create the image.");
+                return;
+            }
+
+            const link = document.createElement("a");
+            link.download = "tier-list.png";
+            link.href = URL.createObjectURL(blob);
+
+            document.body.appendChild(link);
+            link.click();
+            link.remove();
+
+            setTimeout(() => URL.revokeObjectURL(link.href), 1000);
+        }, "image/png");
+
+    } catch (error) {
+        console.error("Tier list screenshot error:", error);
+        alert("Could not create the image. Check the browser console for details.");
+    }
 });
 </script>
 </body>

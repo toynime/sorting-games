@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sort</title>
+<style>
+body{
+    background-color: #20232a;
+    padding-top: 50px;
+}
+.tier {
+    display: flex;
+    min-height: 100px;
+    border: 1px solid #333;
+
+}
+
+.label {
+    width: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: gray;
+    font-weight: bold;
+    align-self: stretch;
+}
+
+.games {
+    flex: 1;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 10px;
+    background-color: #3a404b;
+}
+
+.games div {
+    width: 80px;
+    height: 120px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    background-color: rgba(0, 255, 255, 0.5);
+    text-align: center;
+    border-radius: 20px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: all 1s;
+}
+.games > div:hover{
+    background-color: rgba(0, 255, 255, 1);
+}
+
+.games img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    display: block;
+    border-radius: 20px;
+    flex-shrink: 0;
+}
+
+.games span {
+    display: block;
+    width: 100%;
+    margin-top: 5px;
+    font-size: 12px;
+    line-height: 11px;
+    font-weight: bold;
+    opacity: 0.8;
+}
+.tier:nth-child(1) .label {
+    background-color: #ff0000;
+}
+
+.tier:nth-child(2) .label {
+    background-color: #ff3333;
+}
+
+.tier:nth-child(3) .label {
+    background-color: #ff5555;
+}
+
+.tier:nth-child(4) .label {
+    background-color: #ff8888;
+}
+
+.tier:nth-child(5) .label {
+    background-color: #ffbbbb;
+}
+</style>
+</head>
+<body>
+
+<div class="tier">
+    <div class="label">Very Hard</div>
+    <div class="games">
+        <div data-store="https://play.google.com/store/apps/details?id=com.multicastgames.venomSurvive&hl=en"><img src="images/Alien Invasion.png"><span>Alien Invasion</span></div>
+        <div data-store="https://play.google.com/store/apps/details?id=com.twodestudios.octofeast&hl=en"><img src="images/Octopus Feast by Rollic.png"><span>Octopus Feast</span></div>
+        <div data-store="https://play.google.com/store/apps/details?id=io.supercent.linkedcubic&hl=en"><img src="images/Snake Clash!.png"><span>Snake Clash!</span></div>
+        <div data-store="https://play.google.com/store/apps/details?id=com.beetleplay.spidernest&hl=en"><img src="images/The Spider Nest Spider Games .png"><span>The Spider Nest Spider Games</span></div>
+    </div>
+</div>
+
+<div class="tier">
+    <div class="label">Hard</div>
+    <div class="games">
+        <div data-store="https://play.google.com/store/apps/details?id=com.xq.archeroii&hl=en"><img src="images/Archero 2.png"><span>Archero 2</span></div>
+        <div data-store="https://play.google.com/store/apps/details?id=com.pocketchamps.game&hl=en"><img src="images/Pocket Champs by Madbox.png"><span>Pocket Champs</span></div>
+        <div data-store="https://play.google.com/store/apps/details?id=com.hunt.royale&hl=en"><img src="images/Hunt Royale by BoomBit.png"><span>Hunt Royale</span></div>
+        <div data-store="https://play.google.com/store/apps/details?id=com.idle.breaker.game&hl=en"><img src="images/Idle Breaker - Last Survival by Estoty.png"><span>Idle Breaker - Last Survival</span></div>
+        <div data-store="https://play.google.com/store/apps/details?id=com.TornadoBear.KingLand&hl=en"><img src="images/Kingland by Homa and Tornado Bear.png"><span>Kingland</span></div>
+        <div data-store="https://play.google.com/store/apps/details?id=com.playstrom.hero.tower&hl=en"><img src="images/TDS - Tower Destiny Survive .png"><span>TDS - Tower Destiny Survive</span></div>
+        <div data-store="https://play.google.com/store/apps/details?id=com.WalkTalk.FlightMaster&hl=en"><img src="images/Epic Plane Evolution by Voodoo and Heseri Games.png"><span>Epic Plane Evolution</span></div>
+        <div data-store="https://play.google.com/store/apps/details?id=com.mowand.trim&hl=en"><img src="images/Mow And Trim by FreePlay.png"><span>Mow And Trim</span></div>
+        <div data-store="https://play.google.com/store/apps/details?id=com.GnarlyGameStudio.FrontlineHeroes&hl=en"><img src="images/Frontline Heroes WW2 Warfare.png"><span>Frontline Heroes WW2 Warfare</span></div>
+    </div>
+</div>
+
+<div class="tier">
+    <div class="label">Medium</div>
+    <div class="games">
+        <div data-store="https://play.google.com/store/apps/details?id=com.habby.capybara&hl=en"><img src="images/Capybara Go! by Habby.png"><span>Capybara Go!</span></div>
+        <div data-store="https://play.google.com/store/apps/details?id=com.vincentb.MobControl&hl=en"><img src="images/Mob Control by Voodoo.png"><span>Mob Control</span></div>
+        <div data-store="https://play.google.com/store/apps/details?id=com.crescivegames.twistedtangle&hl=en"><img src="images/Twisted Tangle by Rollic.png"><span>Twisted Tangle</span></div>
+        <div data-store="https://play.google.com/store/apps/details?id=com.ozn.busqueuee&hl=en"><img src="images/Seat Away by Rollic and Babil Studios.png"><span>Seat Away</span></div>
+        <div data-store="https://play.google.com/store/apps/details?id=com.gamebrain.hexasort&hl=en"><img src="images/Hexa Sort by Lion Studio.png"><span>Hexa Sort</span></div>
+        <div data-store="https://play.google.com/store/apps/details?id=com.nnxshcwrkg.scavengerhunt"><img src="images/Scavenger Hunt! by Popcore.png"><span>Scavenger Hunt!</span></div>
+        <div data-store="https://play.google.com/store/apps/details?id=games.rivvy.monstersurvivors"><img src="images/Monster Survivors .png"><span>Monster Survivors</span></div>
+        <div data-store="https://play.google.com/store/search?q=Timeline%20Up&c=apps"><img src="images/Timeline Up by Rollic and Mojo Games.png"><span>Timeline Up</span></div>
+        <div data-store="https://play.google.com/store/apps/details?id=com.dream.dale"><img src="images/Dreamdale - Fairy Adventure by SayGames and Hypernova Games.png"><span>Dreamdale - Fairy Adventure</span></div>
+        <div data-store="https://play.google.com/store/apps/details?id=io.supercent.pizzaidle"><img src="images/Pizza Ready by Supercent.png"><span>Pizza Ready</span></div>
+        <div data-store="https://play.google.com/store/search?q=Uboat%20Attack&c=apps"><img src="images/Uboat Attack .png"><span>Uboat Attack</span></div>
+        <div data-store="https://play.google.com/store/apps/details?id=com.wasteland.heart"><img src="images/Wasteland Life Survival Idle.png"><span>Wasteland Life Survival Idle</span></div>
+        <div><img src="images/Squad Alpha - Action Shooting.png"><span>Squad Alpha - Action Shooting</span></div>
+        <div data-store="https://play.google.com/store/apps/details?id=com.corestudios.storemanagementidle"><img src="images/Outlets Rush by Supercent .png"><span>Outlets Rush</span></div>
+        <div data-store="https://play.google.com/store/apps/details?id=com.funcell.trashinc"><img src="images/Trash Tycoon Idle Business.png"><span>Trash Tycoon Idle Business</span></div>
+        <div data-store="https://play.google.com/store/apps/details?id=com.cyberjoy.r1"><img src="images/Car Fix Inc by Cyberjoy.png"><span>Car Fix Inc</span></div>
+        <div data-store="https://play.google.com/store/apps/details?id=games.resourcer.hex"><img src="images/States Builder Trade Empire.png"><span>States Builder Trade Empire</span></div>
+        <div data-store="https://play.google.com/store/apps/details?id=com.lilyxgame.cleanit"><img src="images/Clean It Cleaning Games.png"><span>Clean It Cleaning Games</span></div>
+        <div><img src="images/Weapon Master Action Gun Game.png"><span>Weapon Master Action Gun Game</span></div>
+        <div data-store="https://play.google.com/store/apps/details?id=com.western.escape"><img src="images/West Escape.png"><span>West Escape</span></div>
+        <div data-store="https://play.google.com/store/search?q=Life%20Bubble%20-%20My%20Little%20Planet&c=apps"><img src="images/Life Bubble - My Little Planet .png"><span>Life Bubble - My Little Planet</span></div>
+        <div data-store="https://play.google.com/store/search?q=Rapid%20Reload&c=apps"><img src="images/Rapid Reload by Rollic and Giby Games.png"><span>Rapid Reload</span></div>
+        <div data-store="https://play.google.com/store/search?q=Survivor%20Z%20Zombie%20Survival&c=apps"><img src="images/Survivor Z Zombie Survival.png"><span>Survivor Z Zombie Survival</span></div>
+        <div data-store="https://play.google.com/store/search?q=Dinosaur%20Universe&c=apps"><img src="images/Dinosaur Universe.png"><span>Dinosaur Universe</span></div>
+        <div data-store="https://play.google.com/store/search?q=Fishing%20Frenzy&c=apps"><img src="images/Fishing Frenzy.png"><span>Fishing Frenzy</span></div>
+        <div><img src="images/Agent Hunt – Hitman Shooter.png"><span>Agent Hunt – Hitman Shooter</span></div>
+        <div data-store="https://play.google.com/store/search?q=Little%20Farm%20Story%20Idle%20Tycoon&c=apps"><img src="images/Little Farm Story Idle Tycoon .png"><span>Little Farm Story Idle Tycoon</span></div>
+        <div data-store="https://play.google.com/store/search?q=Burger%20Please%21&c=apps"><img src="images/Burger Please!.png"><span>Burger Please!</span></div>
+        <div data-store="https://play.google.com/store/search?q=Gas%20Station&c=apps"><img src="images/Gas Station by Homa and Pinpin Team.png"><span>Gas Station</span></div>
+        <div data-store="https://play.google.com/store/search?q=Conveyor%20Rush%20Idle%20Food%20Games&c=apps"><img src="images/Conveyor Rush Idle Food Games.png"><span>Conveyor Rush Idle Food Games</span></div>
+    </div>
+</div>
+
+<div class="tier">
+    <div class="label">Easy</div>
+    <div class="games">
+        <div data-store="https://play.google.com/store/search?q=Idle%20Outpost%20Upgrade%20Games&c=apps"><img src="images/Idle Outpost Upgrade Games.png"><span>Idle Outpost Upgrade Games</span></div>
+        <div data-store="https://play.google.com/store/apps/details?id=com.magicgs.seatjam"><img src="images/Seat Jam 3D.png"><span>Seat Jam 3D</span></div>
+        <div data-store="https://play.google.com/store/apps/details?id=com.wood.nut.and.bolts.puzzle"><img src="images/Wood Nuts & Bolts Puzzle by ABI Game.png"><span>Wood Nuts & Bolts Puzzle</span></div>
+        <div data-store="https://play.google.com/store/search?q=Tower%20War%20-%20Tactical%20Conquest&c=apps"><img src="images/Tower War - Tactical Conquest .png"><span>Tower War - Tactical Conquest</span></div>
+        <div data-store="https://play.google.com/store/search?q=Screw%20Out&c=apps"><img src="images/Screw Out by iKame Global.png"><span>Screw Out</span></div>
+        <div data-store="https://play.google.com/store/search?q=We%20Are%20Warriors&c=apps"><img src="images/We Are Warriors by Miniclip.png"><span>We Are Warriors</span></div>
+        <div data-store="https://play.google.com/store/apps/details?id=com.wood.screw.puzzle.nuts.botls.pin"><img src="images/Wood Screw Puzzle.png"><span>Wood Screw Puzzle</span></div>
+        <div data-store="https://play.google.com/store/apps/details?id=com.hwqgrhhjfd.idlefastfood"><img src="images/Eatventure by Lessmore.png"><span>Eatventure</span></div>
+        <div data-store="https://play.google.com/store/apps/details?id=com.studio501.cuphero"><img src="images/Cup Heroes.png"><span>Cup Heroes</span></div>
+        <div data-store="https://play.google.com/store/search?q=All%20in%20Hole&c=apps"><img src="images/All in Hole.png"><span>All in Hole</span></div>
+        <div data-store="https://play.google.com/store/search?q=Bus%20Jam&c=apps"><img src="images/Bus Jam.png"><span>Bus Jam</span></div>
+        <div data-store="https://play.google.com/store/search?q=Bus%20Out&c=apps"><img src="images/Bus Out.png"><span>Bus Out</span></div>
+        <div data-store="https://play.google.com/store/search?q=Cake%20Sort&c=apps"><img src="images/Cake Sort.png"><span>Cake Sort</span></div>
+        <div data-store="https://play.google.com/store/search?q=Screw%20Puzzle%20Wood%20Nut%20%26%20Bolt&c=apps"><img src="images/Screw Puzzle Wood Nut & Bolt.png"><span>Screw Puzzle Wood Nut & Bolt</span></div>
+        <div data-store="https://play.google.com/store/search?q=Screw%20Sort%203D%20-%20Pin%20Puzzle&c=apps"><img src="images/Screw Sort 3D - Pin Puzzle.png"><span>Screw Sort 3D - Pin Puzzle</span></div>
+        <div data-store="https://play.google.com/store/search?q=Screw%20Master%203D%20Pin%20Puzzle&c=apps"><img src="images/Screw Master 3D Pin Puzzle.png"><span>Screw Master 3D Pin Puzzle</span></div>
+        <div data-store="https://play.google.com/store/search?q=Screw%20Away%203D%20Pin%20Puzzle&c=apps"><img src="images/Screw Away 3D Pin Puzzle.png"><span>Screw Away 3D Pin Puzzle</span></div>
+        <div data-store="https://play.google.com/store/search?q=Screw%20Pin%20Jam%20Puzzle&c=apps"><img src="images/Screw Pin Jam Puzzle by Wonder Group.png"><span>Screw Pin Jam Puzzle</span></div>
+        <div data-store="https://play.google.com/store/search?q=Archery%20Clash%21&c=apps"><img src="images/Archery Clash!.png"><span>Archery Clash!</span></div>
+        <div data-store="https://play.google.com/store/search?q=Geometry%20Tower&c=apps"><img src="images/Geometry Tower.png"><span>Geometry Tower</span></div>
+        <div data-store="https://play.google.com/store/search?q=Coffee%20Pack&c=apps"><img src="images/Coffee Pack.png"><span>Coffee Pack</span></div>
+        <div data-store="https://play.google.com/store/search?q=War%20Regions%20-%20Tactical%20Game&c=apps"><img src="images/War Regions - Tactical Game.png"><span>War Regions - Tactical Game</span></div>
+        <div data-store="https://play.google.com/store/search?q=Drop%20Jelly&c=apps"><img src="images/Drop Jelly by Rollic and Levee Games.png"><span>Drop Jelly</span></div>
+        <div data-store="https://play.google.com/store/search?q=Traffic%20Escape&c=apps"><img src="images/Traffic Escape by Fomo Games.png"><span>Traffic Escape</span></div>
+        <div data-store="https://play.google.com/store/search?q=Bus%20Out&c=apps"><img src="images/Bus Out.png"><span>Bus Out</span></div>
+        <div data-store="https://play.google.com/store/search?q=Car%20Jam&c=apps"><img src="images/Car Jam by Wingsoft.png"><span>Car Jam</span></div>
+        <div data-store="https://play.google.com/store/search?q=Bus%20Escape%20Traffic%20Jam&c=apps"><img src="images/Bus Escape Traffic Jam.png"><span>Bus Escape Traffic Jam</span></div>
+        <div data-store="https://play.google.com/store/search?q=Bus%20Frenzy%20-%20Traffic%20Jam&c=apps"><img src="images/Bus Frenzy - Traffic Jam.png"><span>Bus Frenzy - Traffic Jam</span></div>
+        <div data-store="https://play.google.com/store/search?q=Color%20Clash&c=apps"><img src="images/Color Clash by Voodoo.png"><span>Color Clash</span></div>
+        <div data-store="https://play.google.com/store/search?q=Fruit%20Merge%20Juicy%20Drop%20Game&c=apps"><img src="images/Fruit Merge Juicy Drop Game by Bravestars Games.png"><span>Fruit Merge Juicy Drop Game</span></div>
+        <div data-store="https://play.google.com/store/apps/details?id=com.magicgs.seatjam"><img src="images/Seat Jam 3D.png"><span>Seat Jam 3D</span></div>
+        <div data-store="https://play.google.com/store/apps/details?id=games.resourcer.hex"><img src="images/States Builder Trade Empire.png"><span>States Builder Trade Empire</span></div>
+        <div data-store="https://play.google.com/store/search?q=Hidden%20Objects%20-%20The%20Journey&c=apps"><img src="images/Hidden Objects - The Journey.png"><span>Hidden Objects - The Journey</span></div>
+        <div data-store="https://play.google.com/store/search?q=Evolving%20Bombs&c=apps"><img src="images/Evolving Bombs by CrazyLabs.png"><span>Evolving Bombs</span></div>
+        <div data-store="https://play.google.com/store/search?q=My%20Aquapark%20Idle%20Water%20Empire&c=apps"><img src="images/My Aquapark Idle Water Empire .png"><span>My Aquapark Idle Water Empire</span></div>
+        <div data-store="https://play.google.com/store/search?q=Coffee%20Mania%20-%20Sorting%20Jam&c=apps"><img src="images/Coffee Mania - Sorting Jam.png"><span>Coffee Mania - Sorting Jam</span></div>
+    </div>
+</div>
+
+<div class="tier">
+    <div class="label">Very Easy</div>
+    <div class="games">
+        <div data-store="https://play.google.com/store/search?q=Blossom%20Sort&c=apps"><img src="images/Blossom Sort.png"><span>Blossom Sort</span></div>
+        <div data-store="https://play.google.com/store/search?q=Block%20Jam%203D&c=apps"><img src="images/Block Jam 3D.png"><span>Block Jam 3D</span></div>
+        <div data-store="https://play.google.com/store/search?q=Screw%20Jam&c=apps"><img src="images/Screw Jam by Rollic and Quok Games.png"><span>Screw Jam</span></div>
+        <div data-store="https://play.google.com/store/search?q=Goods%20Puzzle&c=apps"><img src="images/Goods Puzzle by Onesoft Global.png"><span>Goods Puzzle</span></div>
+        <div data-store="https://play.google.com/store/search?q=Collect%20Em%20All%21&c=apps"><img src="images/Collect Em All!.png"><span>Collect Em All!</span></div>
+        <div data-store="https://play.google.com/store/search?q=Find%20It%20Out%20-%20Hidden%20Object&c=apps"><img src="images/Find It Out - Hidden Object.png"><span>Find It Out - Hidden Object</span></div>
+        <div data-store="https://play.google.com/store/search?q=Family%20Life&c=apps"><img src="images/Family Life.png"><span>Family Life</span></div>
+        <div data-store="https://play.google.com/store/search?q=Family%20Tree%21%20-%20Logic%20Puzzles&c=apps"><img src="images/Family Tree! - Logic Puzzles.png"><span>Family Tree! - Logic Puzzles</span></div>
+        <div data-store="https://play.google.com/store/search?q=Card%20Shuffle%20Sort&c=apps"><img src="images/Card Shuffle Sort.png"><span>Card Shuffle Sort</span></div>
+        <div data-store="https://play.google.com/store/search?q=Pick%20Me%20Up%20Idle&c=apps"><img src="images/Pick Me Up Idle by Supersonic and Hibox.png"><span>Pick Me Up Idle</span></div>
+        <div data-store="https://play.google.com/store/search?q=Clue%20Master%20-%20Logic%20Puzzles&c=apps"><img src="images/Clue Master - Logic Puzzles.png"><span>Clue Master - Logic Puzzles</span></div>
+        <div data-store="https://play.google.com/store/search?q=Conquer%20Countries&c=apps"><img src="images/Conquer Countries.png"><span>Conquer Countries</span></div>
+        <div data-store="https://play.google.com/store/search?q=Find%20The%20Cat&c=apps"><img src="images/Find The Cat by Agave Games.png"><span>Find The Cat</span></div>
+        <div data-store="https://play.google.com/store/search?q=Nut%20n%20Bolt%20Sort%20Color%20Puzzle&c=apps"><img src="images/Nut n Bolt Sort Color Puzzle.png"><span>Nut n Bolt Sort Color Puzzle</span></div>
+        <div data-store="https://play.google.com/store/search?q=Fill%20The%20Fridge&c=apps"><img src="images/Fill The Fridge by Rollic and Gybe Games.png"><span>Fill The Fridge</span></div>
+        <div data-store="https://play.google.com/store/search?q=Triple%20Match%20City&c=apps"><img src="images/Triple Match City by Radiant Cat Studio.png"><span>Triple Match City</span></div>
+    </div>
+</div>
+
+<div class="tier">
+    <div class="label">The Easiest</div>
+    <div class="games">
+        <div data-store="https://play.google.com/store/search?q=Unpuzzle%20Tap%20Away&c=apps"><img src="images/Unpuzzle Tap Away.png"><span>Unpuzzle Tap Away</span></div>
+    </div>
+</div>
+<script>
+document.querySelectorAll(".games > div").forEach(function(game) {
+    game.addEventListener("click", function() {
+       window.open(game.dataset.store, "_blank");
+    });
+});
+let draggedGame = null;
+
+document.querySelectorAll(".games > div").forEach(game => {
+
+    game.setAttribute("draggable", "true");
+
+    game.addEventListener("dragstart", function () {
+        draggedGame = this;
+        this.classList.add("dragging");
+    });
+
+    game.addEventListener("dragend", function () {
+        this.classList.remove("dragging");
+        draggedGame = null;
+
+        document.querySelectorAll(".games").forEach(games => {
+            games.classList.remove("drag-over");
+        });
+    });
+});
+
+
+document.querySelectorAll(".games").forEach(games => {
+
+    games.addEventListener("dragover", function (e) {
+        e.preventDefault();
+        this.classList.add("drag-over");
+    });
+
+    games.addEventListener("dragleave", function () {
+        this.classList.remove("drag-over");
+    });
+
+    games.addEventListener("drop", function (e) {
+        e.preventDefault();
+
+        this.classList.remove("drag-over");
+
+        if (draggedGame) {
+            this.appendChild(draggedGame);
+        }
+    });
+
+});
+</script>
+</body>
+</html>

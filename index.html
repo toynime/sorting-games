@@ -24,6 +24,7 @@ body{
     background: gray;
     font-weight: bold;
     align-self: stretch;
+    padding: 2px;
 }
 
 .games {
@@ -90,7 +91,7 @@ body{
 .tier:nth-child(5) .label {
     background-color: #ffbbbb;
 }
-#downloadTierList{
+#downloadTierList,#add{
     width: 200px;
     height: 70px;
     margin-bottom: 50px;
@@ -103,6 +104,14 @@ body{
     font-size: large;
     margin-left: 550px;
     cursor: pointer;
+}
+#add{
+    margin-top: 30px;
+}
+.input{
+
+    width: 100px;
+    text-align: center;
 }
 </style>
 </head>
@@ -246,6 +255,10 @@ body{
 </div>
 </div>
 
+<button id="add">
+    Add Column
+</button>
+
 
 <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
 <script>
@@ -254,49 +267,72 @@ document.querySelectorAll(".games > div").forEach(function(game) {
        window.open(game.dataset.store, "_blank");
     });
 });
+
+
 let draggedGame = null;
 
-document.querySelectorAll(".games > div").forEach(game => {
+document.getElementById("tierlist").addEventListener("dragstart", function(e) {
 
-    game.setAttribute("draggable", "true");
+    let game = e.target.closest(".games > div");
 
-    game.addEventListener("dragstart", function () {
-        draggedGame = this;
-        this.classList.add("dragging");
-    });
+    if (game) {
+        draggedGame = game;
+        game.classList.add("dragging");
+    }
 
-    game.addEventListener("dragend", function () {
-        this.classList.remove("dragging");
+});
+
+document.getElementById("tierlist").addEventListener("dragend", function(e) {
+
+    let game = e.target.closest(".games > div");
+
+    if (game) {
+        game.classList.remove("dragging");
         draggedGame = null;
 
         document.querySelectorAll(".games").forEach(games => {
             games.classList.remove("drag-over");
         });
-    });
+    }
+
 });
 
+document.getElementById("tierlist").addEventListener("dragover", function(e) {
 
-document.querySelectorAll(".games").forEach(games => {
+    let games = e.target.closest(".games");
 
-    games.addEventListener("dragover", function (e) {
+    if (games) {
         e.preventDefault();
-        this.classList.add("drag-over");
-    });
+        games.classList.add("drag-over");
+    }
 
-    games.addEventListener("dragleave", function () {
-        this.classList.remove("drag-over");
-    });
+});
 
-    games.addEventListener("drop", function (e) {
+document.getElementById("tierlist").addEventListener("dragleave", function(e) {
+
+    let games = e.target.closest(".games");
+
+    if (games) {
+        games.classList.remove("drag-over");
+    }
+
+});
+
+document.getElementById("tierlist").addEventListener("drop", function(e) {
+
+    let games = e.target.closest(".games");
+
+    if (games && draggedGame) {
         e.preventDefault();
 
-        this.classList.remove("drag-over");
+        games.classList.remove("drag-over");
+        games.appendChild(draggedGame);
+    }
 
-        if (draggedGame) {
-            this.appendChild(draggedGame);
-        }
-    });
+});
 
+document.querySelectorAll(".games > div").forEach(game => {
+    game.setAttribute("draggable", "true");
 });
 
 
@@ -337,6 +373,78 @@ document.getElementById("downloadTierList").addEventListener("click", async () =
     } catch (error) {
         console.error("Tier list screenshot error:", error);
         alert("Could not create the image. Check the browser console for details.");
+    }
+});
+
+document.getElementById("add").addEventListener("click",function(){
+    let div1=document.createElement("div");
+    div1.className="tier";
+   let div2=document.createElement("div");
+    div2.className="label";
+    div2.textContent="click here"
+   let div3=document.createElement("div");
+    div3.className="games";
+
+   document.getElementById("tierlist").append(div1);
+   div1.append(div2,div3);
+})
+
+
+document.getElementById("tierlist").addEventListener("click", function(event) {
+
+    if (event.target.classList.contains("label")) {
+
+        let label = event.target;
+
+        if (label.querySelector(".input")) {
+            return;
+        }
+
+        let input = document.createElement("input");
+        input.type = "text";
+        input.value = label.textContent;
+        input.className = "input";
+
+        label.textContent = "";
+        label.append(input);
+
+        input.focus();
+    }
+
+
+  document.body.addEventListener("keydown", function(event) {
+    if (event.key == "Enter") {
+        end();
+    }
+});
+  
+
+  function end() {
+    for (let i = 0; i < document.getElementsByClassName("label").length; i++) {
+
+        let label = document.getElementsByClassName("label")[i];
+
+        if (label.firstElementChild &&
+            label.firstElementChild.className == "input") {
+
+            label.textContent = label.firstElementChild.value;
+        }
+    }
+}
+
+});
+
+
+document.getElementById("tierlist").addEventListener("contextmenu", function(event) {
+
+    let tier = event.target.closest(".tier");
+
+    if (tier) {
+        event.preventDefault();
+
+        if (confirm("Do you want to remove this column?")) {
+            tier.remove();
+        }
     }
 });
 </script>
